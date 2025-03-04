@@ -11,9 +11,15 @@
       "wdth" 100;
 } */
 
+@import "reset.css";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+
 @media (max-width: 1200px) {
   .main-first {
-      grid-template-columns: 1fr 3fr 1fr;
+      grid-template-columns: 1fr 2fr 1fr;
   }
   .block {
       width: 80%;
@@ -21,22 +27,20 @@
   html{
     max-width: 1920px;
   }
-  
 }
 
 @media (max-width: 768px) {
   .main-first {
-      grid-template-columns: 1fr;
+      grid-template-columns: 1fr 1fr !important;
       padding: 0;
   }
-  .left-adv, .right-adv {
-      display: none; /* Скрываем боковые колонки */
+  .right-adv {
+      display: none !important; /* Скрываем боковые колонки */
   }
   .block {
       width: 100% !important;
       margin-left: 0 !important;
-      padding: 20px;
-
+      padding: 15px;
   }
   .image-container {
       flex-direction: column;
@@ -62,8 +66,8 @@
     overflow-x: hidden; /* Скрывает горизонтальную прокрутку */
   }
   .main-first{
-    grid-template-columns: 1fr;
-    padding: 0 !important;
+    grid-template-columns: 1fr !important;
+    padding: 2px !important;
     margin: 0 !important;
     width: 100% !important;
     max-width: none !important;
@@ -71,7 +75,7 @@
     gap: 0px !important;
   }
   .main-content{
-    padding: 10% !important; /*кринж, но работает*/
+    /* padding: 10% !important; кринж, но работает */
   }
   .price {
     font-size: 12px;
@@ -87,6 +91,9 @@
     padding: 10px !important;
     border-radius: 0;
     font-size: 24px;
+  }
+  .left-adv, .right-adv {
+    display: none !important;
   }
 }
 @media (max-width: 320px) {
@@ -161,8 +168,12 @@ body {
 }
 */
 
+.img-scale-horiz{
+  transform: scale(-1, 1);
+}
+
 .left-adv, .right-adv {
-  padding: 20px;
+  padding: 15px;
   overflow-y: auto; /* Прокрутка внутри aside (нифига не работает - можно смириться)*/
   display: flex;
   flex-direction: column;
@@ -182,7 +193,7 @@ body {
 .main-first{
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
-  padding: 20px;
+  padding: 15px;
   gap: 5px;
   width: 100%;
   max-width: 100%;
@@ -192,7 +203,7 @@ body {
 .main-content{
   background-color: #CC7722;
   border-radius: 2cm;
-  padding: 50px 50px 20px;
+  padding: 25px 30px 10px;
   /* display: grid;
   grid-template-columns: 1fr 1fr; */
   gap: 10px;
@@ -211,7 +222,7 @@ body {
 
 .block{
   width: 60%;
-  padding: 35px;
+  padding: 25px;
   background: #ebbe83;
   border-radius: 1cm;
 }
@@ -303,10 +314,11 @@ main .image-wrapper:hover .price {
 
 #depr1{
   background-color: #2c2c2c;
-  padding: 20px;
+  padding: 10px;
   border-radius: 1cm;
-  margin: 20px auto;
-  max-width: 600px;
+  margin: 0px;
+  max-width: 100%;
+  width: 100%;
   text-align: center;
   font-family: 'Arial', sans-serif;
   color: #CC7722;
@@ -356,7 +368,7 @@ blockquote {
 
 audio{
   background: #723B20;
-  padding: 20px;
+  padding: 10px;
   border-radius: 15px;
   display: flex;
   align-items: center;
