@@ -4,24 +4,31 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Лабораторная работа 1</title>
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="index.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <script src="index.js"></script>
   </head>
 
   <body>
-    <header class="header-box">
-      <h1 style="justify-content: flex-end; font-size: larger">
-        Стариковский Егор КС-24
-      </h1>
-      <h2 style="justify-content: flex-end; font-size: large">Вариант 48</h2>
-    </header>
-
     <main>
+      <section class="game-box">
+        <h1 style="display: flex; justify-content: center">Игра в города</h1>
+        <article style="display: block;">
+          <button
+            style="display: flex; height: 10vh; width: 20vh"
+            type="button"
+            onclick="startGame()"
+          >
+            Начать игру
+          </button>
+        </article>
+      </section>
+
       <section class="funny-box" style="margin-bottom: 30px">
         <h1 style="display: flex; justify-content: center">
           Топ 5 смешных случаев в моей жизни
