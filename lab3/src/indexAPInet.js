@@ -1,3 +1,5 @@
+// без api
+
 function getRandomInt(maxWords) {
     return Math.floor(Math.random()*(maxWords));
 }
@@ -64,14 +66,6 @@ async function checkWord() {
         if(word.length !== 5 || !isWordValid(word)){
             alert("Введите слово из 5 букв. Ну, и только буковки русского алфавита");
             continue;
-        }        
-
-        const checkWordExist = await checkWordAPI(word);
-        console.log("Check Word Exist:", checkWordExist);
-
-        if(!checkWordExist){
-            alert("//Норм слово напишите//");
-            continue;
         }
 
         alert("Фух, хотя бы слово норм написали. Давайте посмотрим, угадали ли Вы...");
@@ -108,61 +102,6 @@ async function checkWord() {
             location.reload(); // Перезагружает страницу
         }
     }
-}
-
-// не стоит открывать в сети muctr и тд без vpn, если хотите проверочку на слово
-
-async function checkWordAPI(word) {
-    const apiKey = "LYKdPvanryooYqgB";
-    const url = `https://api.textgears.com/spelling?text=${encodeURIComponent(word)}&language=ru-RU&whitelist=chill&key=${apiKey}`;  
-
-    try {
-        const response = await fetchWithTimeout(url, {}, 1000);     // свой тайм-аут, если апишка не воркает
-        if (!response.ok) {
-            console.error("Ошибка сети или сервера:", response.statusText);
-            return true;
-        }
-
-        const data = await response.json();
-
-        console.log("API Response:", data);
-
-        if (data.status && data.response) {
-            const hasSpellingError = data.response.errors.some(error => 
-                error.description?.en === "Возможно найдена орфографическая ошибка."
-            );
-            console.log("Has Spelling Error:", hasSpellingError);
-            return !hasSpellingError;
-        } 
-        else {
-            console.error("Ошибка API:", data.description);
-            return true;
-        }
-        //     if (hasSpellingError) {
-        //         alert("Напишите норм слово..");
-        //     } else {
-        //         alert("Есть такое.");
-        //     }
-        // } else {
-        //     alert("Ошибка проверки.");
-        // }
-    } catch (error) {
-        console.error("Ошибка при запросе к API:", error);
-        return true;
-    }
-}    
-
-// Функция для выполнения fetch с таймаутом
-async function fetchWithTimeout(url, options = {}, timeout = 5000) {
-    // Создаем промис, который завершится с ошибкой после таймаута
-    const timeoutPromise = new Promise((_, reject) => {
-        setTimeout(() => {
-            reject(new Error("Request timed out"));
-        }, timeout);
-    });
-
-    // Выполняем fetch и соревнуемся с таймаутом
-    return Promise.race([fetch(url, options), timeoutPromise]);
 }
 
 function playChillGuy(message, playSound = false) {
