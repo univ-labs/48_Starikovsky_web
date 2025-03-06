@@ -1,0 +1,377 @@
+/* @font-face{
+    font-family: 'Source Sans 3';
+    src: url("../SourceSans3-VariableFont_wght.ttf") format("truetype"); 
+    font-weight: 100 900;
+    font-style: normal;
+}  */
+
+* /* Звездочка - это тип для всего по дефолту */ { margin: 0; padding: 0; box-sizing: border-box;
+  
+    /* Color scheme */
+    
+    --textcolor: #f700ff;
+    --bgcolor: #fff;
+    --highlight: #000000;
+} 
+
+#modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+#modalContent {
+    background-color: rgb(59, 56, 56);
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+#chillButton{
+    background-color: #f44336; /* Красный цвет */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#chillButton:hover {
+    background-color: #d32f2f; /* Темный красный на ховер */
+    transform: scale(1.1); /* Легкое увеличение */
+}
+
+#chillButton:active {
+    transform: scale(0.95); /* Уменьшение при нажатии */
+}
+
+input[type="range"] {
+    margin-top: 10px;
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #ddd;
+    border-radius: 5px;
+    outline: none;
+    transition: background 0.3s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: #4CAF50;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+input[type="range"]:focus {
+    background: #bbb;
+}
+
+code {
+    font-family:"Courier New", monospace;
+}
+
+@media (prefers-color-scheme: dark) {
+    * {
+      --textcolor: #ffffff;
+      --bgcolor: #41b3a3;
+      --highlight: #bdf007;
+    }
+}
+
+body {
+    font-size: 18px;
+    font-family: system-ui, sans-serif;
+    line-height: 1.5;
+    color: var(--textcolor);
+    background: var(--bgcolor);
+    position: relative;
+    max-width: 64em;  /* remove this for a full-width layout */
+    margin: 0 auto;  /* centers the layout */
+}
+
+section {
+    padding: calc(9em + 15vw) 5vw 8vw 0px;
+    /* ! Everything below is needed ! */
+    display: none;
+    position: absolute;
+    top: 0;
+    min-height: 100vh;
+    width: 100%;
+    background: var(--bgcolor);
+}
+
+#home{
+    padding: calc(6em + 15vw) 5vw 8vw 0px;
+}
+
+section:target { /* Show section */
+    display: block;
+}
+
+section#home { /* Show #home by default */
+    display: block;
+}
+  
+/* Заголовок */
+
+.banner {
+    width: 100%; 
+    height: 150px; 
+    background-color: #000;
+    position: relative;
+    z-index: 1; /* Баннер под навигацией */
+}
+.banner img {
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    padding: 0;
+    display: flex;
+    top: 0;
+    left: 0;
+    justify-content: flex-start;
+    position: relative;
+    width: 100%;
+    align-items: center;
+    z-index: 2;
+    /* align-items:center; */
+}
+  
+
+
+header h1 {
+    font-size: 3em;
+    margin-right: 5vw;
+    flex: 1;        /* pushes nav to the right */
+    padding: 0px;
+}
+
+nav {
+    padding-left: 20px;
+    z-index: 3;
+}
+
+nav ul{
+    list-style-type: none;
+    padding: 30px;
+}
+
+nav li{
+    margin-bottom: 5px;
+}
+
+
+
+/* General */
+
+
+a {
+    text-decoration: none;
+    color: var(--highlight);
+}
+
+a:hover { 
+    text-decoration: underline; 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+p{
+    margin-bottom: 5px;
+    text-indent: 20px; /* Красная строка */
+}
+
+.rounded-frame{
+    background-color: #c38d9e; /* Фон контейнера */
+    border-radius: 15px; /* Закругленные углы */
+    padding: 30px; /* Отступы внутри контейнера */
+    color: #050505;
+}
+
+.styled-list li {
+    padding: 10px; 
+    margin-bottom: 10px;
+    border-radius: 15px; /* Закругленные углы */
+    background-color: #c38d9e; /* Фон элемента */
+}
+
+.poster-rating-movie{
+    display: flex;
+    align-items:flex-start;
+    gap: 20px;
+}
+
+.poster{
+    width: 400px;
+    height: auto;
+}
+
+.rating{
+    flex: 1; 
+    margin-left: 3vw;
+}
+
+/* Стили для списка в блоке .rating */
+.rating ul {
+    list-style-type: georgian;
+    padding-left: 20px;
+    margin: 0;
+}
+
+.rating li {
+    margin-bottom: 5px;
+    text-indent: 0;
+}
+
+
+.review-container {
+    display: flex; /* размещаем слайдер и текст в строку */
+    justify-content: center;
+    top: 100px;
+    align-items: flex-start;
+    gap: 20px;
+    position: relative;
+    margin-bottom: 8vw;
+    /* width: 100%; */
+}
+
+.review-text {
+    flex: 1;        /* ты слева */
+    max-width: 40%;
+}
+
+.slider {
+    flex: 1;        /*я справа */
+    max-width: 60%;
+}
+
+/* Слайдики */
+.slides {
+    position: relative;
+    width: 50vw;
+    margin: 0 auto; /* центрирование слайдов */
+    color: #bdf007;
+    text-align: center;
+}
+
+
+/* Скрываем все слайды по умолчанию */
+.slides .slide img{
+    width: 50vw;
+    height: auto;
+}
+
+/* Скрываем все слайдики по умолчанию */
+.slides .slide {
+    display: none;
+}
+
+/* Показываем слайдик, если его кнопка выбрана */
+#slide1:checked ~ .slides #slide1-img,
+#slide2:checked ~ .slides #slide2-img,
+#slide3:checked ~ .slides #slide3-img,
+#slide4:checked ~ .slides #slide4-img,
+#slide5:checked ~ .slides #slide5-img {
+    display: block;
+}
+
+/* Цитаты */
+
+section#quotes{
+    text-align: center;
+}
+
+.poem{
+    padding-top: 3vw;
+    list-style-type: none;
+    padding-left: 15vw;
+    margin: auto;
+    text-align: justify;
+}
+
+.poem li{
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    background-color: #edf0f7;
+    /* text-align: left; */
+    line-height: 1.4;
+    color:dimgray;
+    width: 40vw;
+    font-family: 'Source Sans 3', sans-serif; /* Эх, не получилось? В следующий раз повезёт */
+}
+
+
+/* Общие стили для таблицы */
+.football-table {
+    width: 100%; /* Ширина таблицы */
+    max-width: 800px; /* Максимальная ширина */
+    margin: 20px auto; /* Центрирование таблицы */
+    border-collapse: collapse; /* Убираем двойные границы */
+    font-family: Arial, sans-serif; /* Шрифт */
+    font-size: 16px; /* Размер текста */
+    text-align: center; /* Выравнивание текста по центру */
+    background-color: #fff; /* Фон таблицы */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Тень */
+}
+
+/* Стили для заголовка таблицы */
+.football-table caption {
+    font-size: 20px; /* Размер текста заголовка */
+    font-weight: bold; /* Жирный шрифт */
+    margin-bottom: 10px; /* Отступ снизу */
+    color: #333; /* Цвет текста */
+}
+
+/* Стили для заголовков столбцов */
+.football-table th {
+    background-color: #0488167e; /* Фон заголовков */
+    color: #fff; /* Цвет текста */
+    padding: 12px; /* Внутренние отступы */
+    border: 1px solid #ddd; /* Границы */
+}
+
+/* Стили для ячеек таблицы */
+.football-table td {
+    padding: 10px;
+    border: 1px solid #ddd; 
+    color: #2e2c2c;
+}
+
+/* Чередование цвета строк */
+.football-table tbody tr:nth-child(odd) {
+    background-color: #0ce9b2b7;
+}
+
+.football-table tbody tr:nth-child(even) {
+    background-color: #a6a8aca1;
+}
+
+/* Стили для строки при наведении */
+.football-table tbody tr:hover {
+    background-color: #d1e7ff;
+    transition: background-color 0.3s ease;
+}
+
+
+/* Я под конец уже задолбалась, так что мой хороший товарищ интернет нашел стиль для этой таблицы футболистов, но вы этого не видели 
+Ну, я еще цвета поменяла*/
