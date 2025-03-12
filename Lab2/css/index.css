@@ -1,3 +1,5 @@
+@import url(reset.css);
+
 body {
   margin: 0px;
   background: url("https://media0.giphy.com/media/v1.Y2lkPTc5MGI3NjExOXpjOWVzdHdhaW12dWVoYTE2aDl0ZG9nb2J0aG15Z3RwMmhhbXZtMyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/dSetRSJcR3PGqkvjRg/giphy.gif");
