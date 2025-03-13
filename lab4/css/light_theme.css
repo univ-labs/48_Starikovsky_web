@@ -1,0 +1,106 @@
+
+body {
+    background-color: #723B20;
+}
+
+.header{
+    background-color: #D2B48C;
+    color: #723B20;
+    border: #723B20;
+}
+
+.main-content{
+    background-color: #CC7722;
+}
+
+.block{
+    background: #ebbe83;
+}
+
+#rock{
+    color: #E25822;
+    background-color:#723B20;
+}
+
+#main-h2{
+    color: #800000;
+}
+
+#art2 h2{
+    color: #800000;
+}
+
+#art2 li{
+    background-color: #CC7722;
+    box-shadow: 10px 2px 5px rgba(19, 0, 87, 0.1);
+    color: #2c2c2c;
+}
+
+#art2 .image-container img {
+    box-shadow: rgba(0, 0, 0, 0.1);
+}
+
+main .price{
+    background-color: #800000;
+    color: #D2B48C;
+    box-shadow: rgba(0, 0, 0, 0.2);
+}
+
+main .image-wrapper:hover .price {
+    background-color: #030b88; /* Изменение цвета ценника при наведении */
+}
+
+#depr1{
+    background-color: #2c2c2c;
+    color: #CC7722;
+}
+
+blockquote{
+    color: #555; 
+    border-left: #ccc;
+}
+
+audio{
+    background: #723B20;
+}
+
+.custom-audio::-webkit-media-controls-panel, 
+.audio-main::-webkit-media-controls-panel {
+    background: #723B20;
+}
+
+.custom-audio::-webkit-media-controls-current-time-display,
+.custom-audio::-webkit-media-controls-time-remaining-display {
+    color: white;
+}
+
+.custom-audio {
+    background: #CC7722;
+}
+  
+footer{
+    color: #ccc;
+}
+
+.review-feed{
+    background-color: #b4691f;
+    color: #0e0c0c;
+}
+
+#subm{
+    background-color: #723B20;
+}
+
+#subm:hover{
+    background-color: #3d2e1f;
+}
+
+.review{
+    background-color: #723B20;
+}
+
+input::placeholder, 
+textarea::placeholder{
+  color: #412903;
+  
+}
