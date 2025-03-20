@@ -10,8 +10,8 @@ class Block {
 }
 
 
-// dont touch, son, it doesn't work
-class SubBlock {                // Если вы видите этот класс незакомменченным, то автор либо умер, либо чёт в жизни у него не то 
+// dont touch, son, it doesn't work   (UPD: yeahhh)
+class SubBlock {                // Если вы видите этот класс незакомменченным, то автор либо умер, либо чёт в жизни у него не то //UPD: 20/03/2025 12:09 - It is working
     constructor(params, id) {
         this.id = id || Date.now() + Math.random(); // Учитываем переданный ID
         this.params = params.map(p => ({ 
@@ -328,23 +328,29 @@ document.addEventListener('DOMContentLoaded', () => {
                     block.data.title = blockElement.querySelector('h2').innerText;
                     // block.data.content = blockElement.querySelector('p').innerText;
                     const subblocksInDOM = Array.from(blockElement.querySelectorAll('.subblock'));
-                    subblocksInDOM.forEach(subblockElement => {
+                    const updatedSubblocks = subblocksInDOM.map(subblockElement => {
                         const subId = subblockElement.dataset.subblockId;
-                        const existingSub = block.data.subblocks.find(s => s.id === subId);
+                        const existingSub = block.data.subblocks.find(s => s.id == subId); // надо использовать просто ==, а не ===, гном
                         
-                        if (existingSub) {
-                            existingSub.params = Array.from(subblockElement.querySelectorAll('li'))
-                                .map(li => {
-                                    const paramId = li.dataset.paramId;
-                                    const [name, value] = li.innerText.split(':').map(s => s.trim());
-                                    return {
-                                        id: paramId || Date.now() + Math.random(),
-                                        name: name || "Параметр",
-                                        value: value || ""
-                                    };
-                                });
+                        if (!existingSub) {
+                            console.warn(`Не найден существующий подблок с ID: ${subId}. Пропускаю создание нового.`);
+                            return null;  // Не создаём новый, если подблок не найден
                         }
-                    });
+                    
+                        existingSub.params = Array.from(subblockElement.querySelectorAll('li')).map(li => {
+                            const paramId = li.dataset.paramId;
+                            const [name, value] = li.innerText.split(':').map(s => s.trim());
+                            return {
+                                id: paramId || Date.now() + Math.random(),
+                                name: name || "Параметр",
+                                value: value || ""
+                            };
+                        });
+                    
+                        return existingSub;
+                    }).filter(sub => sub !== null);  // Исключаем пустые значения
+                    
+                    block.data.subblocks = updatedSubblocks;
                     console.log(`Block ${index} subblocks after update:`, block.data.subblocks);
                     break;
             }
