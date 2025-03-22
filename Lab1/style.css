@@ -1,0 +1,143 @@
+body {
+  background-color: #1f1b15;
+  color: #faf0e6;
+
+  overflow-x: hidden;
+
+  font-family: "Montserrat", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-size: 28px;
+  font-style: normal;
+}
+
+body::before,
+body::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  filter: blur(180px);
+  z-index: -1;
+}
+
+body::before {
+  top: 10%;
+  left: 80%;
+  background: rgba(245, 222, 179, 0.4);
+}
+
+body::after {
+  bottom: -20%;
+  right: 60%;
+  background: rgba(238, 216, 201, 0.3);
+}
+
+h1,
+h2 {
+  font-size: 40px;
+  font-weight: 800;
+  color: wheat;
+  display: flex;
+}
+
+#center {
+  justify-content: center;
+  display: flex;
+}
+
+a {
+  color: white;
+}
+
+p {
+  text-align: justify;
+}
+
+.funny-content {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 20px;
+}
+
+button {
+  margin: 0 auto;
+  font-size: 20px;
+  display: block;
+  justify-content: center;
+  align-items: center;
+  width: 20vh;
+  height: 10vh;
+}
+
+.film-review {
+  display: flex;
+}
+
+.memento-text {
+  padding-left: 50px;
+  padding-right: 40px;
+}
+
+.film-quotes-content {
+  display: flex;
+}
+
+.quote {
+  display: flex;
+  background-color: #eed8c9;
+  border-radius: 20px;
+  color: #3f2e20;
+  padding: 24px;
+  margin-bottom: 15px;
+  margin-right: 25px;
+  transition: transform 0.5s ease-out, box-shadow 0.5s ease-out,
+    background-color 0.5s ease-out;
+}
+
+.quote:hover {
+  transform: scale(1.02);
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+  background-color: rgba(245, 222, 179, 1);
+}
+
+.martin-iden-photo {
+  display: inline-block;
+  border-radius: 20px;
+}
+
+.football-header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+table {
+  font-size: 20px;
+  background-color: white;
+  /* border-radius: 20px; */
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td,
+th {
+  color: black;
+  border: 1px solid;
+  text-align: left;
+  padding: 20px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+.table-content {
+  display: flex;
+  padding: 15px;
+}
