@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ВЫ ПОБЕДИТЕЛЬ!!!</title>
+    <link rel="stylesheet" href="css/index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/png" href="img/winner.png" />
+  </head>
+  <body>
+    <header>
+      <marquee scrollamount="20"
+        >🔥 УСПЕЙТЕ! ТОЛЬКО СЕГОДНЯ! 💾 SoapDrive - РЕВОЛЮЦИЯ В МИРЕ МЫЛА! В
+        ПОДАРОК!🔥
+      </marquee>
+      <img
+        id="theme-change"
+        class="theme-img"
+        src="img/dark-theme-svgrepo-com.svg"
+        alt=""
+        onclick=""
+      />
+    </header>
+
+    <main>
+      <article style="display: flex">
+        <aside class="ads-banner">
+          <img src="img/swipe-down.gif" alt="" />
+          <span class="white-text"
+            >Купи SoapDrive прямо сейчас! Всего за 999.99$!</span
+          >
+          <img src="img/swipe-up.gif" alt="" />
+        </aside>
+
+        <section class="soap-info-box">
+          <h1 class="white-text" style="margin: 0 0 10px">
+            USB-Мыло "SoapDrive"
+          </h1>
+          <div class="soap-info">
+            <img class="soap-pic" src="img/soap.webp" alt="soap" />
+
+            <div style="justify-content: center">
+              <p class="white-text">
+                🔌 Первое в мире мыло с USB-разъёмом! <br />
+                ✅ Подключается к ПК – заряжается от USB и мигает радужными
+                светодиодами! <br />
+                ✅ Счётчик намыливаний – отслеживает, сколько раз ты мыл руки и
+                ругает за грязные ладошки! <br />
+                ✅ Запах цифровых технологий – фирменный аромат "Флешка с
+                АлиЭкспресса"! <br />
+                ✅ Синхронизация с Windows 98 – отображает статистику гигиены в
+                таблице Excel!
+              </p>
+              <div style="display: flex; justify-content: center">
+                <button onclick="alert('Спс')" type="button">КУПИТЬ</button>
+              </div>
+            </div>
+          </div>
+        </section>
+      </article>
+
+      <article class="reviews-article">
+        <h2>Отзывы</h2>
+        <div class="review-filter">
+          <div class="review-sort">
+            <p>Показать сначала:</p>
+            <button id="sort-high">Сначала классные</button>
+            <button id="sort-low">Сначала неклассные(</button>
+          </div>
+          <div class="review-create">
+            <button id="openPopupButton">Добавить отзыв</button>
+          </div>
+        </div>
+
+        <section class="user-reviews" id="reviews-box"></section>
+
+        <section id="feedbackPopup" class="popup">
+          <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Как вам товар?🥹</h2>
+            <input type="hidden" id="selectedRating" name="rating" value="0" />
+
+            <form class="feedback-box" id="feedbackForm">
+              <div class="rating">
+                <span data-value="1">★</span>
+                <span data-value="2">★</span>
+                <span data-value="3">★</span>
+                <span data-value="4">★</span>
+                <span data-value="5">★</span>
+              </div>
+              <input
+                type="hidden"
+                id="selectedRating"
+                name="rating"
+                value="0"
+              />
+
+              <label>Ваше имя: </label>
+              <input type="text" id="username" name="remaining" required />
+
+              <label for="impression">Ваше впечатление: </label>
+              <textarea id="impression" name="impression"></textarea>
+
+              <button type="submit">Отправить отзыв</button>
+            </form>
+          </div>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <p style="text-align: center">2025</p>
+    </footer>
+    <script src="js/review.js"></script>
+    <script src="js/index.js"></script>
+    <script src="js/cookies.js"></script>
+  </body>
+  </html>
