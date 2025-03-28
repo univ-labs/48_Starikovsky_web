@@ -1,0 +1,97 @@
+@import "reset.css";
+@import "blocks.css";
+
+:root {
+    --default-spacing: 16px;
+}
+
+body {
+    background: white;
+
+    font-family: "Rubik", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+
+header {
+    background: rgb(214, 0, 29);
+    color: white;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    height: 10vh;
+    margin-bottom: 2vh;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+}
+
+
+/* Базовые стили */
+
+h1 {
+    font-weight: bold;
+    font-size: 2rem;
+    padding-top: var(--default-spacing);
+    padding-bottom: var(--default-spacing);
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    padding-top: var(--default-spacing);
+    padding-bottom: var(--default-spacing);
+}
+
+p {
+    font-size: 1rem;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+nav {
+    display: flex;
+    cursor: pointer;
+}
+
+.skills-box ul {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.info-box h2 {
+    color: rgb(0, 170, 255);
+}
+
+#edit-button {
+    position: fixed;
+    top: 12vh;
+    right: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: 70px;
+    border-radius: 20px;
+    border: 2px solid black;
+    background: white;
+    cursor: pointer;
+
+    z-index: 1000;
+    max-width: 1024px;
+}
+
+
+/* Медиа запросы */
+
+@media (max-width: 768px) {
+    .block-container {
+        width: 100vw;
+    }
+}
